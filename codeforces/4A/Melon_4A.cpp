@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int main() {
+int main_Melon_4A() {
 	//freopen("input.txt", "rt", stdin);
 	//freopen("output.txt", "wt", stdout);
 

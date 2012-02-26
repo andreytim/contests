@@ -23,10 +23,19 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Square_1A\Square_1A.cpp">
+    <ClCompile Include="4A\Melon_4A.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Melon_4A\Melon_4A.cpp">
+    <ClCompile Include="82A\Sheldon_82A.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="1A\Square_1A.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="71A\Strings_71A.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="118A\StringTask_118A.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
