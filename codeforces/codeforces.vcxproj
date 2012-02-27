@@ -79,11 +79,13 @@
     <None Include="output.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="118A\StringTask_118A.cpp" />
-    <ClCompile Include="4A\Melon_4A.cpp" />
-    <ClCompile Include="71A\Strings_71A.cpp" />
-    <ClCompile Include="82A\Sheldon_82A.cpp" />
-    <ClCompile Include="1A\Square_1A.cpp" />
+    <ClCompile Include="A\116A\Tram_116A.cpp" />
+    <ClCompile Include="A\118A\StringTask_118A.cpp" />
+    <ClCompile Include="A\119A\Epic_119A.cpp" />
+    <ClCompile Include="A\4A\Melon_4A.cpp" />
+    <ClCompile Include="A\71A\Strings_71A.cpp" />
+    <ClCompile Include="A\82A\Sheldon_82A.cpp" />
+    <ClCompile Include="A\1A\Square_1A.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
