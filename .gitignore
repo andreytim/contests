@@ -1,3 +1,5 @@
 [Dd]ebug*/
 ipch*/
 [Bb]in
+*.sdf
+*.opensdf
