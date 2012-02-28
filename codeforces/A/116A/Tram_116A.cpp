@@ -6,7 +6,7 @@
 
 using namespace std;
 
-int main() {
+int main_Tram_116A() {
 	//freopen("input.txt", "rt", stdin);
 	//freopen("output.txt", "wt", stdout);
 

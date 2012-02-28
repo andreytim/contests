@@ -86,6 +86,7 @@
     <ClCompile Include="A\71A\Strings_71A.cpp" />
     <ClCompile Include="A\82A\Sheldon_82A.cpp" />
     <ClCompile Include="A\1A\Square_1A.cpp" />
+    <ClCompile Include="B\118B\Gift_118B.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

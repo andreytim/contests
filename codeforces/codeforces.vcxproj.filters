@@ -44,5 +44,8 @@
     <ClCompile Include="A\116A\Tram_116A.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="B\118B\Gift_118B.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
