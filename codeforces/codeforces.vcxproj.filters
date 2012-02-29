@@ -47,5 +47,20 @@
     <ClCompile Include="B\118B\Gift_118B.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="R110_Div2\A\A.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="R110_Div2\B\B.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="R110_Div2\C\C.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="R110_Div2\D\D.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="R110_Div2\E\E.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

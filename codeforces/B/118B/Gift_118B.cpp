@@ -26,7 +26,7 @@ string genString(int n) {
 	return res.substr(0, res.length()-1);
 }
 
-int main() {
+int main_Gift_118B() {
 	//freopen("input.txt", "rt", stdin);
 	//freopen("output.txt", "wt", stdout);
 
