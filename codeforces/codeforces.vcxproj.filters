@@ -47,19 +47,31 @@
     <ClCompile Include="B\118B\Gift_118B.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="R110_Div2\A\A.cpp">
+    <ClCompile Include="B\131B\Contrasts_131B.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="R110_Div2\B\B.cpp">
+    <ClCompile Include="B\116B\PandW_116B.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="R110_Div2\C\C.cpp">
+    <ClCompile Include="B\157B\Trace_157B.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="R110_Div2\D\D.cpp">
+    <ClCompile Include="A\157A\Game_157A.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="R110_Div2\E\E.cpp">
+    <ClCompile Include="Round_Template\A\A.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Round_Template\B\B.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Round_Template\C\C.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Round_Template\D\D.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Round_Template\E\E.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

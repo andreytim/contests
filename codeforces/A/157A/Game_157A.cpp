@@ -21,7 +21,7 @@ bool checkWin(const vector< vector<int> > &v, int x, int y) {
 	return resVert > resHor;
 }
 
-int mainA() {
+int main_Game_157A() {
 	//freopen("input.txt", "rt", stdin);
 	//freopen("output.txt", "wt", stdout);
 

@@ -10,7 +10,7 @@
 
 using namespace std;
 
-int mainB() {
+int main_Trace_157B() {
 	//freopen("input.txt", "rt", stdin);
 	//freopen("output.txt", "wt", stdout);
 
