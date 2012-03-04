@@ -6,7 +6,7 @@
 
 using namespace std;
 
-int main_StringTask_118A() {
+int main() {
 	//freopen("input.txt", "rt", stdin);
 	//freopen("output.txt", "wt", stdout);
 

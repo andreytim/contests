@@ -6,36 +6,9 @@
 
 using namespace std;
 
-inline int gcd(int a, int b) {
-	if (a == b) {
-		return a;
-	}
-	if (a == 0 || b == 0) {
-		return a | b;
-	}
-	int shift;
-	for (shift = 0; ((a | b) & 1) == 0; shift++) {
-		a >>= 1;
-		b >>= 1;
-	}
-	while ((a & 1) == 0) {
-		a >>= 1;
-	}
-	do {
-		while ((b & 1) == 0) {
-			b >>= 1;
-		}
-		if (a > b) {
-			int t = a;
-			a = b;
-			b = t;
-		}
-		b = b - a;
-	} while (b != 0);
-	return a << shift;
-}
+int gcd(int a, int b) { return b ? gcd(b, a%b) : a; }
 
-int main_Epic_119A() {
+int main() {
 	//freopen("input.txt", "rt", stdin);
 	//freopen("output.txt", "wt", stdout);
 
