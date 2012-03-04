@@ -19,18 +19,22 @@
 
 using namespace std;
 
-typedef unsigned long long int64;
+int main() {
+	//freopen("input.txt", "rt", stdin);
+	//freopen("output.txt", "wt", stdout);
 
-template <class T>
-string toString (const T& t) {
-	stringstream ss;
-	ss << t;
-	return ss.str();
-}
+	int m,n;
+	cin >> m >> n;
 
-int mainA() {
-	freopen("input.txt", "rt", stdin);
-	freopen("output.txt", "wt", stdout);
-	
+	int res = 0;
+	if ((m & 1) != 0) {
+		res += n/2;
+		m--;
+	}
+
+	res += (m/2)*n;
+
+	cout << res;
+
 	return 0;
 }

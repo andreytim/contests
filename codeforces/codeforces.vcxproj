@@ -79,23 +79,7 @@
     <None Include="output.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="A\116A\Tram_116A.cpp" />
-    <ClCompile Include="A\118A\StringTask_118A.cpp" />
-    <ClCompile Include="A\119A\Epic_119A.cpp" />
-    <ClCompile Include="A\4A\Melon_4A.cpp" />
-    <ClCompile Include="A\71A\Strings_71A.cpp" />
-    <ClCompile Include="A\82A\Sheldon_82A.cpp" />
-    <ClCompile Include="A\1A\Square_1A.cpp" />
-    <ClCompile Include="B\116B\PandW_116B.cpp" />
-    <ClCompile Include="B\118B\Gift_118B.cpp" />
-    <ClCompile Include="B\131B\Contrasts_131B.cpp" />
-    <ClCompile Include="A\157A\Game_157A.cpp" />
-    <ClCompile Include="B\157B\Trace_157B.cpp" />
-    <ClCompile Include="Round_Template\A\A.cpp" />
-    <ClCompile Include="Round_Template\B\B.cpp" />
-    <ClCompile Include="Round_Template\C\C.cpp" />
-    <ClCompile Include="Round_Template\D\D.cpp" />
-    <ClCompile Include="Round_Template\E\E.cpp" />
+    <ClCompile Include="A\136A\FriendGifts_136A.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
