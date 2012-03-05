@@ -82,11 +82,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="SRM 535\DIV 2\p500.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="input.txt" />
-    <None Include="output.txt" />
+    <ClCompile Include="Boxing.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

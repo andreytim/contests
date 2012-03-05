@@ -15,16 +15,8 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="SRM 535\DIV 2\p500.cpp">
+    <ClCompile Include="Boxing.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="input.txt">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="output.txt">
-      <Filter>Resource Files</Filter>
-    </None>
   </ItemGroup>
 </Project>
