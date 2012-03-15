@@ -78,6 +78,9 @@
     <None Include="input.txt" />
     <None Include="output.txt" />
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="D\159D\Pairs_159D.cpp" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
