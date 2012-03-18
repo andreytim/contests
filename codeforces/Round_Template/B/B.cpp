@@ -19,11 +19,18 @@ inline string toString (const T& t) {
 	return ss.str();
 }
 
-int mainB() {
+int main() {
 	freopen("input.txt", "rt", stdin);
 	freopen("output.txt", "wt", stdout);
 
-
+	int64 n, k, pow, p;
+	cin >> n >> k;
+	while (pow < n) {
+		pow *= k;
+		p++;
+	}
+	p /= k;
+	
 
 	return 0;
 }
