@@ -6,6 +6,12 @@ using namespace std;
 
 const int N = 100000;
 
+/*	
+	Counts the number of inversions in the array through Merge Sort algorithm.
+
+	author - RoninFeng
+*/
+
 long long mergeWithCount(vector<int> &a, int l, int r) {
 	vector<int> result;
 	int mid = (l + r) / 2, 

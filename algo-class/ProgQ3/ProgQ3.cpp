@@ -9,6 +9,13 @@ using namespace std;
 
 const int N = 40;
 
+/*
+	Finds the number of crossing edges in the minimum cut of the graph
+	through invoking the Randomized Contraction Algorithm for N*N times.
+
+	author - RoninFeng
+*/
+
 int minCut(vector<pair<int,int>> edges) {
 	vector<pair<int,int>> newEdges;
 	for (int count = N; count > 2; count--) {

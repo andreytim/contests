@@ -6,9 +6,16 @@ using namespace std;
 
 const int N = 10000;
 
-// p = l => 162085
-// p = r => 164123
-// p = median => 138382
+/*
+	Counts the number of comparisons in partition subroutine of Quick Sort
+	choosing the pivots through different methods.
+
+	p = l => 162085
+	p = r => 164123
+	p = median => 138382
+
+	author - RoninFeng
+*/
 
 int choosePivot(vector<int>& a, int l, int r) {
 	int min = l, max = r, mid = (r + l)/2;
