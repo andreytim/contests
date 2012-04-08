@@ -11,11 +11,10 @@ const int N = 40;
 
 int minCut(vector<pair<int,int>> edges) {
 	int count = N;
-	while (count > 2) {
+	vector<pair<int,int>> newEdges;
+	for (int count = N; count > 2; count--) {
 		int e = rand() % edges.size();
 		int f = edges[e].first, s = edges[e].second;
-		count--;
-		vector<pair<int,int>> newEdges, temp;
 		for (int i = 0; i < edges.size(); i++) {
 			if (edges[i].first == s) {
 				edges[i].first = f;
