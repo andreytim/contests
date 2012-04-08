@@ -10,7 +10,6 @@ using namespace std;
 const int N = 40;
 
 int minCut(vector<pair<int,int>> edges) {
-	int count = N;
 	vector<pair<int,int>> newEdges;
 	for (int count = N; count > 2; count--) {
 		int e = rand() % edges.size();
