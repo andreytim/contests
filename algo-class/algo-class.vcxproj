@@ -74,9 +74,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="ProgQ1\ProgQ1.cpp" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="input.txt" />
     <None Include="output.txt" />
   </ItemGroup>

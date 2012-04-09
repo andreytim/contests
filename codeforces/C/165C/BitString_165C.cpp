@@ -1,21 +1,27 @@
 #include <iostream>
-#include <algorithm>
-#include <vector>
+#include <string>
+#include <map>
+
 using namespace std;
 
 int main() {
 	/*freopen("input.txt", "rt", stdin);
 	freopen("output.txt", "wt", stdout);*/
 
-	long long n, k;
-	cin >> n >> k; k--;
-	vector<long long> vll(n);
-	for (int i = 0; i < n; i++) cin >> vll[i];
-	sort(vll.begin(), vll.end());
-	long long i = k/n, num1 = 0, num2 = 0, idx = 0;
-	while (vll[idx] < vll[i]) idx++; num1 = idx;
-	while (idx < n && vll[idx] == vll[i]) idx++; num2 = idx - num1;
-	long long j = (k - n*num1)/num2;
-	cout << vll[i] << ' ' << vll[j];
+	long long k, res = 0;
+	string s;
+	cin >> k >> s;
+	map<int, int> counts; 
+	counts[0] = 1;
+	int curr = 0;
+	for (int i = 0; i < s.length(); i++) {
+		curr += s[i] - '0';
+		if (curr - k >= 0) {
+			res += counts[curr - k];
+		}
+		counts[curr]++;
+	}
+	cout << res;
+
 	return 0;
 }
