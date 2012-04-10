@@ -13,33 +13,26 @@ using namespace std;
 */
 
 int solve() {
-	int N, currTime = 0, button, res = 0;
-	char currColor = 0, prevColor = 0;
-	map<char, int> position;
-	position['O'] = 1; position['B'] = 1;
-	
+	int pos[2] = {1,1}, time[2] = {0,0}, N, res = 0;
 	cin >> N;
 	for (int i = 0; i < N; i++) {
-		cin >> currColor;
-		cin >> button;
-		if (currColor == prevColor || prevColor == 0) {
-			currTime += abs(position[currColor] - button) + 1;
-		} else {
-			res += max(abs(position[currColor] - button), currTime) + 1;
-			currTime = 0;
-		}
-		prevColor = currColor;
-		position[currColor] = button;
+		char botC;
+		int bot = 0, p;
+		cin >> botC;
+		cin >> p;
+		if (botC == 'B') bot = 1;
+		res = max(res, abs(pos[bot] - p) + time[bot]) + 1;
+		pos[bot] = p;
+		time[bot] = res;
 	}
-
-	return res + currTime;
+	return res;
 }
 
 int main() {
 	freopen("input.txt", "rt", stdin);
 	freopen("output.txt", "wt", stdout);
 	
-	int T, N;
+	int T;
 	cin >> T;
 
 	for (int i = 1; i <= T; i++) {

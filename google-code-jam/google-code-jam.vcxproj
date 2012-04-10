@@ -74,11 +74,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="2011\QR\A_BotTrust.cpp" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="input.txt" />
     <None Include="output.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="2011\QR\B_Magicka.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
