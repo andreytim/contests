@@ -18,9 +18,4 @@
     <None Include="input.txt" />
     <None Include="output.txt" />
   </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="2011\QR\B_Magicka.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-  </ItemGroup>
 </Project>
