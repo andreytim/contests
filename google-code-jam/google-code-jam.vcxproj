@@ -74,13 +74,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <None Include="2011\QR\D\D-large-practice.in" />
-    <None Include="2011\QR\D\D-small-practice.in" />
     <None Include="input.txt" />
     <None Include="output.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="2011\QR\D\D_GoroSort.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
