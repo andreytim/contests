@@ -17,5 +17,12 @@
   <ItemGroup>
     <None Include="input.txt" />
     <None Include="output.txt" />
+    <None Include="2011\QR\D\D-small-practice.in" />
+    <None Include="2011\QR\D\D-large-practice.in" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="2011\QR\D\D_GoroSort.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
