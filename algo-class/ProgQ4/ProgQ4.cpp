@@ -2,6 +2,8 @@
 #include <vector>
 #include <map>
 #include <set>
+#include <queue>
+#include <stack>
 #include <algorithm>
 
 using namespace std;
@@ -14,18 +16,17 @@ using namespace std;
 */
 
 map<int, bool> visited;
-vector<pair<int,int>> f;
-vector<int> sccs, stack;
+vector<int> sccs, f;
+stack<int> s, ts;
 int scc, t = 0;
 
 void dfsFoward(map<int, vector<int>>& outs) {
-	while (!stack.empty()) {
-		int v = stack.back();
-		stack.pop_back();
+	while (!s.empty()) {
+		int v = s.top(); s.pop();
 		for (int j = 0; j < outs[v].size(); j++) {
 			if (!visited[outs[v][j]]) {
 				visited[outs[v][j]] = true;
-				stack.push_back(outs[v][j]);
+				s.push(outs[v][j]);
 			}
 		}
 		scc++;
@@ -33,11 +34,12 @@ void dfsFoward(map<int, vector<int>>& outs) {
 }
 
 void findSCCs(map<int, vector<int>>& outs) {
-	for (int i = 0; i < f.size(); i++) {
-		if (!visited[f[i].second]) {
+	for (int i = f.size()-1; i >= 0; i--) {
+		int v = f[i];
+		if (!visited[v]) {
 			scc = 0;
-			visited[f[i].second] = true;
-			stack.push_back(f[i].second);
+			visited[v] = true;
+			s.push(v);
 			dfsFoward(outs);
 			sccs.push_back(scc);
 		}
@@ -45,17 +47,15 @@ void findSCCs(map<int, vector<int>>& outs) {
 }
 
 void dfsBack(map<int, vector<int>>& ins) {
-	while (!stack.empty()) {
-		int v = stack.back();
-		stack.pop_back();
+	while (!s.empty()) {
+		int v = s.top(); s.pop();
 		for (int j = 0; j < ins[v].size(); j++) {
 			if (!visited[ins[v][j]]) {
 				visited[ins[v][j]] = true;
-				stack.push_back(ins[v][j]);
+				s.push(ins[v][j]);
+				ts.push(ins[v][j]);
 			}
 		}
-		t++;
-		f.push_back(pair<int,int>(t,v));
 	}
 }
 
@@ -63,8 +63,13 @@ void reverseLoop(int N, map<int, vector<int>>& ins) {
 	for (int i = N; i > 0; i--) {
 		if (!visited[i]) {
 			visited[i] = true;
-			stack.push_back(i);
+			s.push(i);
+			ts.push(i);
 			dfsBack(ins);
+			while (!ts.empty()) {
+				f.push_back(ts.top());
+				ts.pop();
+			}
 		}
 	}
 }
@@ -83,12 +88,8 @@ int main() {
 		cout << t++ << endl;
 	}
 
-	reverseLoop(11, ins);
-
+	reverseLoop(875714, ins);
 	visited.clear();
-	stack.clear();
-	sort(f.rbegin(), f.rend());
-
 	findSCCs(outs);
 
 	sort(sccs.rbegin(), sccs.rend());

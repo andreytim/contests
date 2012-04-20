@@ -17,7 +17,7 @@
   <ItemGroup>
     <None Include="output.txt" />
     <None Include="ProgQ4\ProgQ4.txt" />
-    <None Include="input_big.txt" />
+    <None Include="input2.txt" />
     <None Include="input.txt" />
   </ItemGroup>
   <ItemGroup>
