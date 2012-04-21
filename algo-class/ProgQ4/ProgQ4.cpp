@@ -1,76 +1,72 @@
+#include <conio.h>
 #include <iostream>
 #include <vector>
 #include <map>
 #include <set>
 #include <queue>
 #include <stack>
+#include <string>
 #include <algorithm>
 
 using namespace std;
 
 /*
-	Finds the number of crossing edges in the minimum cut of the graph
-	through invoking the Randomized Contraction Algorithm for N*N times.
+	Finds the 5 biggest SCC's of directed graph.
 
 	author - RoninFeng
 */
 
 map<int, bool> visited;
-vector<int> sccs, f;
-stack<int> s, ts;
-int scc, t = 0;
+vector<int> f, res;
+int scc, N = 875714;
 
-void dfsFoward(map<int, vector<int>>& outs) {
-	while (!s.empty()) {
-		int v = s.top(); s.pop();
-		for (int j = 0; j < outs[v].size(); j++) {
-			if (!visited[outs[v][j]]) {
-				visited[outs[v][j]] = true;
-				s.push(outs[v][j]);
-			}
+void dfsFoward(map<int, vector<int>>& outs, int v) {
+	visited[v] = true;	
+	scc++;
+	for (int j = 0; j < outs[v].size(); j++) {
+		if (!visited[outs[v][j]]) {
+			dfsFoward(outs, outs[v][j]);
 		}
-		scc++;
 	}
 }
 
 void findSCCs(map<int, vector<int>>& outs) {
 	for (int i = f.size()-1; i >= 0; i--) {
-		int v = f[i];
-		if (!visited[v]) {
+		if (!visited[f[i]]) {
 			scc = 0;
-			visited[v] = true;
-			s.push(v);
-			dfsFoward(outs);
-			sccs.push_back(scc);
-		}
-	}
-}
+			dfsFoward(outs, f[i]);
 
-void dfsBack(map<int, vector<int>>& ins) {
-	while (!s.empty()) {
-		int v = s.top(); s.pop();
-		for (int j = 0; j < ins[v].size(); j++) {
-			if (!visited[ins[v][j]]) {
-				visited[ins[v][j]] = true;
-				s.push(ins[v][j]);
-				ts.push(ins[v][j]);
+			if (res.size() < 5) {
+				res.push_back(scc);
+				sort(res.rbegin(), res.rend());
+			} else if (scc > res[4]) {
+				res.pop_back();
+				res.push_back(scc);
+				sort(res.rbegin(), res.rend());
 			}
+
 		}
+		cout << "forward left: " << i << endl;
 	}
+	while (res.size() < 5) res.push_back(0);
 }
 
-void reverseLoop(int N, map<int, vector<int>>& ins) {
+void dfsBack(map<int, vector<int>>& ins, int v) {
+	visited[v] = true;
+	for (int j = 0; j < ins[v].size(); j++) {
+		if (!visited[ins[v][j]]) {
+			dfsBack(ins, ins[v][j]);
+		}
+	}
+	f.push_back(v);
+}
+
+void reverseLoop(map<int, vector<int>>& ins) {
 	for (int i = N; i > 0; i--) {
 		if (!visited[i]) {
-			visited[i] = true;
-			s.push(i);
-			ts.push(i);
-			dfsBack(ins);
-			while (!ts.empty()) {
-				f.push_back(ts.top());
-				ts.pop();
-			}
+			dfsBack(ins,i);
 		}
+		cout << "reverse left: " << i << endl;
 	}
 }
 
@@ -88,18 +84,17 @@ int main() {
 		cout << t++ << endl;
 	}
 
-	reverseLoop(875714, ins);
+	reverseLoop(ins);
 	visited.clear();
 	findSCCs(outs);
 
-	sort(sccs.rbegin(), sccs.rend());
-
-	freopen("output.txt", "wt", stdout);
-	for (int i = 0; i < 5 && i < sccs.size(); i++) {
-		cout << sccs[i];
-		if (i < 4 && i < sccs.size()-1)
+	for (int i = 0; i < 5; i++) {
+		cout << res[i];
+		if (i < 4)
 			cout << ",";
 	}
+
+	getch();
 
 	return 0;
 }

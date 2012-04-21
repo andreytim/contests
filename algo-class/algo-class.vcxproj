@@ -55,6 +55,10 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <StackReserveSize>135000000</StackReserveSize>
+      <StackCommitSize>135000000</StackCommitSize>
+      <HeapReserveSize>135000000</HeapReserveSize>
+      <HeapCommitSize>135000000</HeapCommitSize>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -72,13 +76,14 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <StackReserveSize>135000000</StackReserveSize>
+      <StackCommitSize>135000000</StackCommitSize>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <None Include="output.txt" />
-    <None Include="input2.txt" />
-    <None Include="ProgQ4\ProgQ4.txt" />
     <None Include="input.txt" />
+    <None Include="output.txt" />
+    <None Include="ProgQ4\ProgQ4.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ProgQ4\ProgQ4.cpp" />
