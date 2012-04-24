@@ -17,5 +17,12 @@
   <ItemGroup>
     <None Include="input.txt" />
     <None Include="output.txt" />
+    <None Include="2008\R1A\A\A-small-practice.in" />
+    <None Include="2008\R1A\A\A-large-practice.in" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="2008\R1A\A\A_MinSP.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

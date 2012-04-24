@@ -19,9 +19,4 @@
     <None Include="ProgQ4\ProgQ4.txt" />
     <None Include="input.txt" />
   </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="ProgQ4\ProgQ4.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-  </ItemGroup>
 </Project>

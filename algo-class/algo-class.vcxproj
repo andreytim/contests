@@ -86,9 +86,6 @@
     <None Include="ProgQ4\ProgQ4.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ProgQ4\ProgQ4.cpp" />
-  </ItemGroup>
-  <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
