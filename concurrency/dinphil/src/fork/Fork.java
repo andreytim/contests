@@ -1,7 +1,7 @@
-package fork;
 /**
  * $Id$
  */
+package fork;
 
 /**
  *
@@ -10,5 +10,4 @@ package fork;
  */
 public class Fork
 {
-
 }

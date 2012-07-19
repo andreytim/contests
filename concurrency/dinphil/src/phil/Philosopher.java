@@ -10,18 +10,18 @@ import fork.Fork;
  * @author atimoshpolsky
  * @since Jul 19, 2012
  */
-public abstract class Philosopher implements Runnable
+public abstract class Philosopher<T extends Fork> implements Runnable
 {
     protected final int position;
-    protected final Fork left;
-    protected final Fork right;
+    protected final T left;
+    protected final T right;
     protected final Random rand = new Random();
     
     protected int eatCount = 0;
     protected long waitTime = 0;
     protected long startWait;
     
-    public Philosopher(int position, Fork left, Fork right) {
+    public Philosopher(int position, T left, T right) {
         this.position = position;
         this.left = left;
         this.right = right;
@@ -50,7 +50,7 @@ public abstract class Philosopher implements Runnable
     
     @Override
     public String toString() {
-        return "[ Philosopher " + position + "]";  //$NON-NLS-1$//$NON-NLS-2$
+        return "[Philosopher " + position + "]";  //$NON-NLS-1$//$NON-NLS-2$
     }
     
     public void log(String msg) {

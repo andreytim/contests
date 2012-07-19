@@ -10,14 +10,14 @@ import fork.Fork;
  * @author atimoshpolsky
  * @since Jul 19, 2012
  */
-public class SimpleSynchronizedPhilosopher extends Philosopher
+public class SimpleSynchronizedPhilosopher<T extends Fork> extends Philosopher<T>
 {
-    private volatile boolean stopFlag = false;
+    protected volatile boolean stopFlag = false;
     
-    private final Object firstLock;
-    private final Object secondLock;
+    protected final Object firstLock;
+    protected final Object secondLock;
     
-    public SimpleSynchronizedPhilosopher(int position, Fork left, Fork right)
+    public SimpleSynchronizedPhilosopher(int position, T left, T right)
     {
         super(position, left, right);
         this.firstLock = position == 0 ? right : left;

@@ -5,8 +5,8 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import phil.Philosopher;
-import phil.SimpleSynchronizedPhilosopher;
-import fork.Fork;
+import phil.StatedForkPhilosopher;
+import fork.StatedFork;
 
 /**
  * $Id$
@@ -21,15 +21,15 @@ public class Main
 {
     private static final int RUN_TIME = 60000;
     private static final int PHILS_NUMBER = 5;
-    private static final List<Philosopher> phils = new ArrayList<Philosopher>(PHILS_NUMBER);
+    private static final List<Philosopher<StatedFork>> phils = new ArrayList<Philosopher<StatedFork>>(PHILS_NUMBER);
     
     public static void main(String ... args) throws Exception
     {
-        Fork first = new Fork();
-        Fork left = first;
+        StatedFork first = new StatedFork();
+        StatedFork left = first;
         for (int i = 0; i < PHILS_NUMBER; i++) {
-            Fork right = (i == PHILS_NUMBER-1) ? first : new Fork();
-            phils.add(new SimpleSynchronizedPhilosopher(i, left, right));
+            StatedFork right = (i == PHILS_NUMBER-1) ? first : new StatedFork();
+            phils.add(new StatedForkPhilosopher(i, left, right));
             left = right;
         }
         
@@ -41,7 +41,7 @@ public class Main
         
         TimeUnit.MILLISECONDS.sleep(RUN_TIME);
         
-        for (Philosopher phil : phils) {
+        for (Philosopher<StatedFork> phil : phils) {
             phil.stop();
         }
         
@@ -49,7 +49,7 @@ public class Main
             thread.join();
         }
         
-        for (Philosopher phil : phils) {
+        for (Philosopher<StatedFork> phil : phils) {
             phil.log("ate " + phil.getEatCount()  //$NON-NLS-1$
                     + " times and waited " + phil.getWaitTime(TimeUnit.MILLISECONDS) + " ms."); //$NON-NLS-1$ //$NON-NLS-2$
         }
