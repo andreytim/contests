@@ -1,7 +1,7 @@
 /**
  * $Id$
  */
-package fork;
+package ru.tim.dinphils.fork;
 
 /**
  *

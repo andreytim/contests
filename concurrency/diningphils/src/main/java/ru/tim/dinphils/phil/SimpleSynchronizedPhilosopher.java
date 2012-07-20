@@ -1,23 +1,23 @@
 /**
  * $Id$
  */
-package phil;
+package ru.tim.dinphils.phil;
 
-import fork.Fork;
+import ru.tim.dinphils.fork.Fork;
 
 /**
  *
  * @author atimoshpolsky
  * @since Jul 19, 2012
  */
-public class SimpleSynchronizedPhilosopher<T extends Fork> extends Philosopher<T>
+public class SimpleSynchronizedPhilosopher extends Philosopher<Fork>
 {
     protected volatile boolean stopFlag = false;
     
     protected final Object firstLock;
     protected final Object secondLock;
     
-    public SimpleSynchronizedPhilosopher(int position, T left, T right)
+    public SimpleSynchronizedPhilosopher(int position, Fork left, Fork right)
     {
         super(position, left, right);
         this.firstLock = position == 0 ? right : left;
