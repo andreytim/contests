@@ -4,3 +4,5 @@ ipch*/
 [Bb]in
 *.sdf
 *.opensdf
+target
+.settings
