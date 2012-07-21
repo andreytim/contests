@@ -12,8 +12,6 @@ import ru.tim.dinphils.fork.WithIdFork;
  */
 public class WithIdForkPhilosopher extends Philosopher<WithIdFork>
 {
-    protected volatile boolean stopFlag = false;
-    
     protected final WithIdFork first;
     protected final WithIdFork second;
     
@@ -25,36 +23,31 @@ public class WithIdForkPhilosopher extends Philosopher<WithIdFork>
     }
 
     @Override
-    public void run()
+    public void act()
     {
-        while (!stopFlag) {
-            think();
-            synchronized (first) {
-                while (this.position == first.eaterID) {
-                    try {
-                        first.wait();
-                    } catch (InterruptedException e) { e.printStackTrace(); }    
-                }
-                first.eaterID = this.position;
-                synchronized (second) {
-                    while (this.position == second.eaterID) {
-                        try {
-                            second.wait();
-                        } catch (InterruptedException e) { e.printStackTrace(); }    
-                    }
-                    second.eaterID = this.position;
-                    eat();
-                    second.notify();
-                }
-                first.notify();
-            };
-        }
-        log("stopped."); //$NON-NLS-1$
-    }
-
-    @Override
-    public void stop()
-    {
-        stopFlag = true;
+		think();
+		synchronized (first) {
+			while (this.position == first.eaterID) {
+				try {
+					first.wait();
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+			}
+			first.eaterID = this.position;
+			synchronized (second) {
+				while (this.position == second.eaterID) {
+					try {
+						second.wait();
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
+				}
+				second.eaterID = this.position;
+				eat();
+				second.notify();
+			}
+			first.notify();
+		}
     }
 }

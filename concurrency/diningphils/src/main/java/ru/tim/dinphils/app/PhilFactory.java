@@ -13,40 +13,42 @@ import ru.tim.dinphils.phil.Philosopher;
  * @author atimoshpolsky
  * @since Jul 20, 2012
  */
-public class PhilFactory<P extends Philosopher<F>, F extends Fork>
+public class PhilFactory
 {
-    private Class<P> philClass;
-    private Class<F> forkClass;
+    private Class<? extends Philosopher<?>> philClass;
+    private Class<? extends Fork> forkClass;
     
-    public PhilFactory(Class<P> philClass, Class<F> forkClass) {
+    public <P extends Philosopher<F>, F extends Fork> PhilFactory(Class<P> philClass, Class<F> forkClass) {
         this.philClass = philClass;
         this.forkClass = forkClass;
     }
-    
-    public P createPhilosopher(int pos, F left, F right)
+
+	@SuppressWarnings("unchecked")
+	public <P,F> P createPhilosopher(int pos, F left, F right)
     {
         try {
-            Constructor<P> constructor = philClass.getConstructor(new Class[]{ int.class, forkClass, forkClass });
+            Constructor<P> constructor = (Constructor<P>) philClass.getConstructor(new Class[]{ int.class, forkClass, forkClass });
             return constructor.newInstance(new Object[]{ pos, left, right });
         } catch (Exception e) {
             return null;
         }
     }
     
-    public F createFork() {
+    @SuppressWarnings("unchecked")
+	public <F> F createFork() {
         try {
-            return forkClass.newInstance();
+            return (F) forkClass.newInstance();
         } catch (Exception e) {
             return null;
         }
     }
 
-    public Class<P> getPhilClass()
+    public Class<? extends Philosopher<?>> getPhilClass()
     {
         return philClass;
     }
 
-    public Class<F> getForkClass()
+    public Class<? extends Fork> getForkClass()
     {
         return forkClass;
     }

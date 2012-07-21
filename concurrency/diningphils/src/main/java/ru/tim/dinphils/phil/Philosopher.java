@@ -28,6 +28,8 @@ public abstract class Philosopher<T extends Fork> implements Runnable
     protected long waitTime = 0;
     protected long startWait;
     
+    protected volatile boolean stopFlag = false;
+    
     public Philosopher(int position, T left, T right) {
         this.position = position;
         this.left = left;
@@ -53,11 +55,20 @@ public abstract class Philosopher<T extends Fork> implements Runnable
         log("finished eating.");  //$NON-NLS-1$
     }
     
-    public abstract void stop();
+    public void stop() {
+    	stopFlag = true;
+    }
     
-    public abstract void run();
-    
-    @Override
+    public void run() {
+    	while (!stopFlag) {
+            act();
+        }
+        log("stopped."); //$NON-NLS-1$
+    }
+
+    protected abstract void act();
+
+	@Override
     public String toString() {
         return "[Philosopher " + position + "]";  //$NON-NLS-1$//$NON-NLS-2$
     }
@@ -74,5 +85,9 @@ public abstract class Philosopher<T extends Fork> implements Runnable
     
     public long getWaitTime(TimeUnit tu) {
         return tu.convert(waitTime, TimeUnit.NANOSECONDS);
+    }
+    
+    public int getPosition() {
+    	return position;
     }
 }
