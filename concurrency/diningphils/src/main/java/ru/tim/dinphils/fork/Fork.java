@@ -1,12 +1,9 @@
-/**
- * $Id$
- */
 package ru.tim.dinphils.fork;
 
 /**
- *
- * @author atimoshpolsky
- * @since Jul 19, 2012
+ * Simple empty fork implementation.
+ * 
+ * @author shpolsky
  */
 public class Fork
 {

@@ -1,14 +1,9 @@
-/**
- * $Id$
- */
 package ru.tim.dinphils.phil;
 
 import ru.tim.dinphils.fork.WithIdFork;
 
 /**
- *
- * @author atimoshpolsky
- * @since Jul 19, 2012
+ * @author shpolsky
  */
 public class WithIdForkPhilosopher extends Philosopher<WithIdFork>
 {

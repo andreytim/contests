@@ -8,6 +8,15 @@ import java.util.concurrent.locks.ReentrantLock;
 
 import ru.tim.dinphils.phil.Philosopher;
 
+/**
+ * The implementation of forks with blocking queue of size 1.
+ * When philosopher tries to pick up the fork the {@code queue.put(philosopher)} method is being invoked.
+ * If there's already someone in the queue thread waits for the queue to become empty.
+ * In order to provide fairness we remember the id (position) of the last added to the queue philosopher
+ * and pass as next eater only another one.
+ * 
+ * @author shpolsky
+ */
 public class BlockingQueueFork extends Fork 
 {
 	private BlockingQueue<Philosopher<BlockingQueueFork>> queue = new ArrayBlockingQueue<Philosopher<BlockingQueueFork>>(1);

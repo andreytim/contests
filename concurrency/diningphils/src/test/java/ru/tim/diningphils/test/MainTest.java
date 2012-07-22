@@ -1,6 +1,3 @@
-/**
- * $Id$
- */
 package ru.tim.diningphils.test;
 
 import java.util.ArrayList;
@@ -11,7 +8,6 @@ import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import ru.tim.dinphils.app.PhilFactory;
 import ru.tim.dinphils.fork.BlockingQueueFork;
 import ru.tim.dinphils.fork.Fork;
 import ru.tim.dinphils.fork.WaiterService;
@@ -23,9 +19,9 @@ import ru.tim.dinphils.phil.WithIdForkPhilosopher;
 import ru.tim.dinphils.phil.WithWaiterPhilosopher;
 
 /**
+ * Test cases for solutions of dining philosophers problem.
  *
- * @author atimoshpolsky
- * @since Jul 20, 2012
+ * @author shpolsky
  */
 public class MainTest
 {
@@ -55,6 +51,18 @@ public class MainTest
     	testPhilosophers(new PhilFactory(WithWaiterPhilosopher.class, Fork.class));
     }
     
+    /**
+     * Main testing method.<br>
+     * 1. Creates a list of philosophers with forks of {@link #PHILS_NUMBER} size.<br>
+     * 2. Starts thread for every philosopher from the list.<br>
+     * 3. Sleeps for {@link #RUN_TIME} ms.<br>
+     * 4. Sends stop signal to every philosopher thread.<br>
+     * 5. Waits for them to finish.<br>
+     * 6. Prints summary results.<br>
+     * 
+     * @param philFactory
+     * @throws InterruptedException
+     */
     private static void testPhilosophers(PhilFactory philFactory) throws InterruptedException
     {
         logger.info("Testing {}.", philFactory.getPhilClass().getSimpleName());

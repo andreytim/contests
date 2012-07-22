@@ -1,7 +1,4 @@
-/**
- * $Id$
- */
-package ru.tim.dinphils.app;
+package ru.tim.diningphils.test;
 
 import java.lang.reflect.Constructor;
 
@@ -9,9 +6,9 @@ import ru.tim.dinphils.fork.Fork;
 import ru.tim.dinphils.phil.Philosopher;
 
 /**
+ * Factory class for creating instances of {@link Philosopher}s and {@link Fork}s.
  *
- * @author atimoshpolsky
- * @since Jul 20, 2012
+ * @author shpolsky
  */
 public class PhilFactory
 {
@@ -24,8 +21,7 @@ public class PhilFactory
     }
 
 	@SuppressWarnings("unchecked")
-	public <P,F> P createPhilosopher(int pos, F left, F right)
-    {
+	public <P,F> P createPhilosopher(int pos, F left, F right) {
         try {
             Constructor<P> constructor = (Constructor<P>) philClass.getConstructor(new Class[]{ int.class, forkClass, forkClass });
             return constructor.newInstance(new Object[]{ pos, left, right });
@@ -43,13 +39,11 @@ public class PhilFactory
         }
     }
 
-    public Class<? extends Philosopher<?>> getPhilClass()
-    {
+    public Class<? extends Philosopher<?>> getPhilClass() {
         return philClass;
     }
 
-    public Class<? extends Fork> getForkClass()
-    {
+    public Class<? extends Fork> getForkClass() {
         return forkClass;
     }
 }

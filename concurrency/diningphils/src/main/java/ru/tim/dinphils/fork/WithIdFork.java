@@ -1,13 +1,9 @@
-/**
- * $Id$
- */
 package ru.tim.dinphils.fork;
 
-
 /**
- *
- * @author atimoshpolsky
- * @since Jul 19, 2012
+ * Fork implementation with remembering of current eater ID.
+ * 
+ * @author shpolsky
  */
 public class WithIdFork extends Fork
 {

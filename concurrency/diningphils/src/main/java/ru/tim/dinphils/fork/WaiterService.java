@@ -11,22 +11,20 @@ public class WaiterService
 	}
 	
 	private CountDownLatch[] latches = new CountDownLatch[DEFAULT_SIZE];
-	private Fork[] lefts = new Fork[DEFAULT_SIZE];
-	private Fork[] rights = new Fork[DEFAULT_SIZE];
+	private Fork[][] forks = new Fork[DEFAULT_SIZE][2];
 	
 	private WaiterService() {}
 	
 	public synchronized void clearingResize(int size) {
 		latches = new CountDownLatch[size];
-		lefts = new Fork[size];
-		rights = new Fork[size];
+		forks = new Fork[size][2];
 	}
 	
 	public synchronized void registerMe(int id, Fork left, Fork right) {
 		CountDownLatch latch = new CountDownLatch(2);
 		latches[id] = latch;
-		lefts[id] = left;
-		rights[id] = right;
+		forks[id][0] = left;
+		forks[id][1] = right;
 		if ((id & 1) == 0) {
 			latch.countDown();
 			latch.countDown();
@@ -38,7 +36,7 @@ public class WaiterService
 			CountDownLatch latch = latches[id];
 			latch.await();
 			latches[id] = new CountDownLatch(2);	
-			return new Fork[]{ lefts[id], rights[id] };
+			return forks[id];
 		} catch (InterruptedException e) {
 			throw new RuntimeException(e);
 		}

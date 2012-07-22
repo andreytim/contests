@@ -13,7 +13,7 @@ public class WithWaiterPhilosopher extends Philosopher<Fork> {
 	@Override
 	protected void act() {
 		think();
-		Fork[] forks = WaiterService.get().serveMe(position);
+		WaiterService.get().serveMe(position);
 		eat();
 		WaiterService.get().leaveMe(position);
 	}

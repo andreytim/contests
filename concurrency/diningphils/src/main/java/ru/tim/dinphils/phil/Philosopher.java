@@ -8,11 +8,10 @@ import org.slf4j.LoggerFactory;
 
 import ru.tim.dinphils.fork.Fork;
 
-
 /**
+ * Basic abstract philosopher implementation.
  *
- * @author atimoshpolsky
- * @since Jul 19, 2012
+ * @author shpolsky
  */
 public abstract class Philosopher<T extends Fork> implements Runnable
 {
@@ -36,6 +35,10 @@ public abstract class Philosopher<T extends Fork> implements Runnable
         this.right = right;
     }
     
+    /**
+     * Emulation of think process with waiting for some time and logging.<br>
+     * ! We can't change this method in our solution.
+     */
     public final void think() {
         log("is thinking.");  //$NON-NLS-1$
         try {
@@ -45,6 +48,10 @@ public abstract class Philosopher<T extends Fork> implements Runnable
         startWait = System.nanoTime();
     }
     
+    /**
+     * Emulation of eat process with waiting for some time and logging.<br>
+     * ! We can't change this method in our solution.
+     */
     public final void eat() {
         waitTime += System.nanoTime() - startWait;
         log("is eating.");  //$NON-NLS-1$
