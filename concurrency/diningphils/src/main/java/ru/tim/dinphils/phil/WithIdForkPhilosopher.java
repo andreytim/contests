@@ -25,18 +25,14 @@ public class WithIdForkPhilosopher extends Philosopher<WithIdFork>
 			while (this.position == first.eaterID) {
 				try {
 					first.wait();
-				} catch (InterruptedException e) {
-					e.printStackTrace();
-				}
+				} catch (InterruptedException e) { e.printStackTrace(); }
 			}
 			first.eaterID = this.position;
 			synchronized (second) {
 				while (this.position == second.eaterID) {
 					try {
 						second.wait();
-					} catch (InterruptedException e) {
-						e.printStackTrace();
-					}
+					} catch (InterruptedException e) { e.printStackTrace(); }
 				}
 				second.eaterID = this.position;
 				eat();

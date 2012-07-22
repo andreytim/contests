@@ -43,8 +43,6 @@ public class BlockingQueueFork extends Fork
 	public void putDown() {
 		try {
 			queue.take();
-		} catch (InterruptedException e) { 
-			e.printStackTrace(); 
-		}
+		} catch (InterruptedException e) { e.printStackTrace(); }
 	}
 }
