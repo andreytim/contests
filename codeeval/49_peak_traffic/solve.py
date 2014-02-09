@@ -43,7 +43,7 @@ def main():
     actions = dict()
     g = Graph()
     for l in f.readlines():
-        date, u1, u2 = l.strip().split('    ')
+        date, u1, u2 = l.strip().split('\t')
         if not u1 in actions: actions[u1] = set()
         if not u2 in actions: actions[u2] = set()
         actions[u1].add(u2)
