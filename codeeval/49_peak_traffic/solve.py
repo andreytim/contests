@@ -31,19 +31,20 @@ def mce_BK(R, P, X, g, cliques):
     if not P and not X:
         cliques.append(R)
     for v in degeneracy_ordering(P, g):
-        mce_BK(R | set([v]), P & g.neighbors(v), X & g.neighbors(v), g, cliques)
+        mce_BK(R | set([v]), P & g.neighbors(v), X & g.neighbors(v), 
+                g, cliques)
         P.remove(v)
         X.add(v)
 
 def degeneracy_ordering(P, g):
-    return [ v[1] for v in sorted([ (g.degree(v), v) for v in P ]) ]
+    return sorted(P, key=lambda v: g.degree(v))
 
 def main():
     f = open(sys.argv[1], 'r')
     actions = dict()
     g = Graph()
     for l in f.readlines():
-        date, u1, u2 = l.strip().split('\t')
+        date, u1, u2 = l.strip().split('    ')
         if not u1 in actions: actions[u1] = set()
         if not u2 in actions: actions[u2] = set()
         actions[u1].add(u2)
