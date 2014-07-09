@@ -1,0 +1,7 @@
+3
+80
+ab bbbc cd aa aa aa aa aa aa aa ab bbbc cd aa aa aa aa aa aa aa ab bbbc cd aa aa aa aa aa aa aa ab bbbc cd aa aa aa aa aa aa aa ab bbbc cd aa aa aa aa aa aa aa ab bbbc cd aa aa aa aa aa aa aa ab bbbc cd aa aa aa aa aa aa aa ab bbbc cd aa aa aa aa aa aa aa
+4
+aa aa bc c
+2
+abc bcd
